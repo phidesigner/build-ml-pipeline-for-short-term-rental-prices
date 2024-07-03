@@ -12,8 +12,8 @@ dependencies:
   - ipywidgets=8.1.2
   - jupyterlab_widgets
   - numba=0.59.1
-  - ydata_profiling=4.7.0
   - pip=23.3.1
   - pip:
       - mlflow[extras]
       - wandb
+      - ydata_profiling==4.7.0
