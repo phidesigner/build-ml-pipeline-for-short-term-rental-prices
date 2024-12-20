@@ -7,32 +7,23 @@ entry_points:
       input_artifact:
         description: "Name of the W&B artifact containing the raw dataset"
         type: string
-
       output_artifact:
         description: "Name of the artifact to store the cleaned dataset"
         type: string
-
       output_type:
         description: "Type of the output artifact (e.g. 'cleaned_data')"
         type: string
-
       output_description:
         description: "Description of the output artifact content"
         type: string
-
       min_price:
         description: "Minimum price threshold; listings priced below this will be removed"
         type: float
-
       max_price:
         description: "Maximum price threshold; listings priced above this will be removed"
         type: float
 
-    command: >-
-      python run.py
-        --input_artifact {input_artifact}
-        --output_artifact {output_artifact}
-        --output_type {output_type}
-        --output_description {output_description}
-        --min_price {min_price}
-        --max_price {max_price}
+    command: >
+      python run.py --input_artifact {input_artifact} --output_artifact {output_artifact}
+      --output_type {output_type} --output_description {output_description}
+      --min_price {min_price} --max_price {max_price}
