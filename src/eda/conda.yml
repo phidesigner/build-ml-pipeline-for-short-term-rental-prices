@@ -15,5 +15,5 @@ dependencies:
   - numba=0.59.1
   - pip=23.3.1
   - pip:
-      - wandb==0.16.0
+      - wandb==0.19.1
       - ydata_profiling
