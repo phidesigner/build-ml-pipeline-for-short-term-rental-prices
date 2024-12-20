@@ -44,7 +44,8 @@ def test_proper_boundaries(data: pd.DataFrame):
     """
     Test proper longitude and latitude boundaries for properties in and around NYC
     """
-    idx = data['longitude'].between(-74.25, -73.50) & data['latitude'].between(40.5, 41.2)
+    idx = data['longitude'].between(-74.25, -
+                                    73.50) & data['latitude'].between(40.5, 41.2)
 
     assert np.sum(~idx) == 0
 
@@ -60,6 +61,20 @@ def test_similar_neigh_distrib(data: pd.DataFrame, ref_data: pd.DataFrame, kl_th
     assert scipy.stats.entropy(dist1, dist2, base=2) < kl_threshold
 
 
-########################################################
-# Implement here test_row_count and test_price_range   #
-########################################################
+def test_row_count(data):
+    """
+    Test that the DataFrame contains a reasonable number of rows.
+    Ensures that dataset size is not too small (less than 15,000 rows)
+    or extremely large (more than 1,000,000 rows).
+    """
+    row_count = data.shape[0]
+    assert 15000 < row_count < 1000000, f"Unexpected of rows: {row_count}"
+
+
+def test_price_range(data, min_price, max_price):
+    """
+    Test that all rows have a 'price' value within the specified range.
+    Raises an AssertionError if any price is outside the given bounds.
+    """
+    in_range = data['price'].between(min_price, max_price)
+    assert in_range.all(), "Some 'price' values are outside the allowed range"
