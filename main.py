@@ -79,7 +79,10 @@ def go(config: DictConfig):
 
         if "data_split" in active_steps:
             _ = mlflow.run(
-                f"{config['main']['components_repository']}/train_val_test_split",
+                (
+                    f"{config['main']['components_repository']}"
+                    f"/train_val_test_split"
+                ),
                 "main",
                 parameters={
                     "input": "clean_sample.csv:latest",

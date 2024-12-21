@@ -7,7 +7,6 @@ dependencies:
   - pyyaml
   - hydra-core=1.3.2
   - pip=23.3.1
-  - libstdcxx-ng
   - pip:
-      - mlflow==2.19.0
-      - wandb==0.19.1
+      - mlflow[extras]
+      - wandb

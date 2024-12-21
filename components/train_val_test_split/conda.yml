@@ -5,12 +5,7 @@ channels:
 dependencies:
   - pip=20.3.3
   - requests=2.24.0
-  - mlflow=1.14.1
-  - scikit-learn=0.24.1
-  - libstdcxx-ng
-  - gcc_linux-64
-  - gxx_linux-64
-  - scipy
+  - mlflow
   - scikit-learn
   - pip:
       - wandb==0.10.31
