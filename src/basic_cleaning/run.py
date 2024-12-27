@@ -30,8 +30,8 @@ def go(args):
 
     # Filter price outliers
     logger.info(
-        f"Filtering out rows with price outside the range [{
-            args.min_price}, {args.max_price}]"
+        "Filtering out rows with price outside the range [%s, %s]",
+        args.min_price, args.max_price
     )
     min_price = args.min_price
     max_price = args.max_price
