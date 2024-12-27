@@ -1,3 +1,9 @@
+# Project WandB MLOps Tracking w/ space
+https://wandb.ai/idiazl/nyc_airbnb?nw=nwuseridiazl
+
+# GitHub Repository
+https://github.com/phidesigner/build-ml-pipeline-for-short-term-rental-prices/tree/v1.0.3
+
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 You are working for a property management company renting rooms and properties for short periods of 
 time on various rental platforms. You need to estimate the typical price for a given property based 
