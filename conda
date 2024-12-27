@@ -1,1 +1,1 @@
-conda env remove --name mlflow-384b7098bc342bc0329cbfec0c9fdbfbb0365335
+mlflow run https://github.com/phidesigner/build-ml-pipeline-for-short-term-rental-prices.git -v v1.0.0 -P hydra_options="etl.sample='sample2.csv'"

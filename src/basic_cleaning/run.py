@@ -30,7 +30,8 @@ def go(args):
 
     # Filter price outliers
     logger.info(
-        f"Filtering out rows with price outside the range [{args.min_price}, {args.max_price}]"
+        f"Filtering out rows with price outside the range [{
+            args.min_price}, {args.max_price}]"
     )
     min_price = args.min_price
     max_price = args.max_price
@@ -41,6 +42,11 @@ def go(args):
     logger.info('Converting "last_review" column to datetime')
     df_clean["last_review"] = pd.to_datetime(
         df_clean["last_review"], errors="coerce")
+
+    # Drop rows in the dataset that are not in the proper geolocation
+    idx = df_clean['longitude'].between(-74.25, -
+                                        73.50) & df_clean['latitude'].between(40.5, 41.2)
+    df_clean = df_clean[idx].copy()
 
     # Save the cleaned DataFrame locally
     output_file = "cleaned_data.csv"
